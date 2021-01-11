@@ -1,0 +1,177 @@
+mkdir demo
+cd demo
+ls
+git init
+ls
+ls -al
+ls .git
+git help
+git help init
+git status
+echo "hello world" > hello.txt
+git status
+git add hello.txt
+git status
+git commit
+git log
+git cat-file -p 46063f4
+git cat-file -p 68aba62e560c0ebc3396e8ae9335232cd93a3f60
+git cat-file -p 3b18e512dba79e4c83
+# git commit -a # or -A
+# or git commit :/ # everything from top level of repo
+about staging area
+ --all --graph --decorate # --oneline
+vim hello.txt
+echo "another line" >> hello.txt
+cat hello.txt
+git commit
+git add hello.txt
+git status
+git commit
+git log --all --graph --decorate
+git log --all --graph --decorate --oneline
+git checkout 46063f4
+cat hello.txt
+# maybe show gitlens here
+git log --all --graph --decorate
+# references have changed ^
+git checkout master
+cat hello.txt
+vim hello.txt
+git checkout 46063f4
+git checkout -f 46063f4
+# now the changes are gone
+git checkout master
+vim hello.txt
+git diff he
+git diff hello.txt
+git log
+git diff 46063f457
+git diff 46063f457 hello.txt
+git diff HEAD hello.txt # same as git diff hello.txt
+git diff 46063f457 HEAD hello.txt
+git checkout hello.txt
+git log --all --graph --decorate
+cat hello.txt
+vim animal.py
+python animal.py
+git status
+git add animal.py
+git commit
+git log --all --graph --decorate
+git branch
+git branch -vv
+git branch -al
+git branch cat
+git log --all --graph --decorate
+git checkout cat
+git log --all --graph --decorate
+vim animal.py
+python animal.py
+python animal.py cat
+python animal.py asdf
+git status
+git diff
+git add animal.py
+git commit
+git log --all --graph --decorate
+git log --all --graph --decorate --oneline
+git checkout master
+cat animal.py
+git log
+git log --all --graph --decorate
+git branch dog
+git checkout dog
+# or git checkout -b dog
+git log --all --graph --decorate
+vim animal.py
+git diff
+git add animal.py
+git status
+git commit
+git log --all --graph --decorate --oneline
+git checkout master
+git log --all --graph --decorate --oneline
+git merge cat # can also add dog if you want
+# fast forward, it just moves the reference
+git log --all --graph --decorate --oneline
+cat animal.py
+git merge dog
+# parallel development, incompatibility
+vim animal.py
+git merge --continue
+git add animal.py
+git merge --continue
+git log --all --graph --decorate --oneline
+# 2 parents, dog and cat
+python animal.py cat
+python animal.py dog
+python animal.py asdf
+git remote
+git remote add origin ../remote
+git push <remote> <local branch>:<remote branch>
+git push origin master:master
+mkdir ../remote
+cd ../remote
+git init
+cd -
+git push origin master:master
+cd -
+git branch -D master
+git checkout -b test
+git branch -D master
+git branch -al
+cd -
+git push origin master:master
+git log --all --graph --decorate --oneline
+vim animal.py
+git add animal.py
+git commit -m
+git commit -m "dostrings"
+git log --all --graph --decorate --oneline
+cd ..
+# git clone <url> <folder name>
+git clone ./remote
+git clone ./remote demo2
+cd demo2
+git branch --set-upstream-to=origin/master
+git branch -vv
+git pull origin master
+git branch --set-upstream-to=origin/master
+cd ../demo
+git push
+git push --set-upstream=origin/master
+git push --set-upstream-to=origin/master
+git branch --set-upstream-to=origin/master
+git push
+cd -
+git log --all --graph --decorate --oneline
+git fetch
+git log --all --graph --decorate --oneline
+git merge master
+git merge origin/master
+git log --all --graph --decorate --oneline
+git pull
+git push
+git remote
+git fetch
+git merge
+git pull
+git config
+vim ~/.gitconfig
+git clone --shallow # or --depth=1
+cd ../demo
+vim animal.py
+git add -p
+git status
+git diff
+git diff --cached
+git diff
+git blame animal.py
+git log
+git show bb82b3393967d26f9ddcbbdc2b2e70db4c6ebe55
+git stash
+less animal.py
+git stash pop
+less animal.py
+vim .gitignore
